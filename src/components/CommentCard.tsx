@@ -2,7 +2,12 @@ import { IoMdMore } from "react-icons/io";
 import { MdOutlineEmojiEmotions } from "react-icons/md";
 import { Comment } from "../contexts/CommentContext";
 
-const CommentCard: React.FC<Comment> = ({ id, title, description }) => {
+type CommentCardProps = {
+  data: Comment;
+};
+
+const CommentCard: React.FC<CommentCardProps> = ({ data }) => {
+  const { id, title, description } = data;
   return (
     <div className="border border-solid rounded-md bg-white p-2">
       <div className="flex justify-between items-center">
