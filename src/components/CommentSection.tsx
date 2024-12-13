@@ -7,15 +7,17 @@ const CommentSection = () => {
   return (
     <div>
       <h1>All Comments</h1>
-      {comments?.map((comment) => {
-        return (
-          <CommentCard
-            id={comment.id}
-            title={comment.title}
-            description={comment.description}
-          />
-        );
-      })}
+      <div className="grid gap-3">
+        {comments?.map((comment) => {
+          return (
+            <CommentCard
+              id={comment.id}
+              title={comment.title}
+              description={comment.description}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 };
