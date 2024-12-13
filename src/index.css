@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
@@ -5,4 +8,15 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+label {
+  padding: 2px;
+  display: block;
+}
+input,
+textarea {
+  inline-size: min(400px, 100% - 2rem);
+  border: 1px solid #ccc;
+  outline: none;
 }
