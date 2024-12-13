@@ -7,7 +7,7 @@ export interface Comment {
   //   user: string;
   //   home: string;
   //   status: number;
-  //   answer: Comment[];
+  answer?: Comment[];
 }
 
 interface CommentsContextType {
@@ -30,12 +30,16 @@ export const CommentsProvider: React.FC<CommentsProviderProps> = ({
   const [comments, setComments] = useState<Comment[]>([
     {
       id: 1,
-      title: "تست 1",
-      description: "بود ..احسینتتتت بود و فلان ...و .....",
-      //   user: "ممد بادی",
-      //   home: "خونه زعفرانیه",
-      //   status: 0,
-      //   answer: [],
+      title: "comment 1",
+      description: "test comment 1 description ..... :)",
+      answer: [
+        {
+          id: 2,
+          title: "reply comment 1",
+          description: "test comment reply 1 description ..... :())",
+          answer: [],
+        },
+      ],
     },
   ]);
 

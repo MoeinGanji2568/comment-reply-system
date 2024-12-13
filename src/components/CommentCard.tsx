@@ -7,12 +7,14 @@ type CommentCardProps = {
 };
 
 const CommentCard: React.FC<CommentCardProps> = ({ data }) => {
-  const { id, title, description } = data;
+  const { id, title, description, answer } = data;
+  const isAnswer: boolean = answer?.length >= 1;
+  console.log(isAnswer);
   return (
-    <div className="border border-solid rounded-md bg-white p-2">
+    <div className={` border border-solid rounded-md bg-white p-2`}>
       <div className="flex justify-between items-center">
         <div className="flex gap-2">
-          <span>{id}</span>
+          <span>{title}</span>
           <span className="text-gray-400">5h ago</span>
         </div>
         <IoMdMore />
@@ -26,6 +28,10 @@ const CommentCard: React.FC<CommentCardProps> = ({ data }) => {
           <button className="text-gray-400">reply</button>
         </div>
       </div>
+      {isAnswer &&
+        answer?.map((answers) => {
+          return <CommentCard data={answers} />;
+        })}
     </div>
   );
 };
